@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+* :focus {
+    outline: none !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+html:root {
+    --el-menu-active-color: #0960bd;
+    --el-menu-text-color: #ffffffb3;
+    --el-menu-hover-text-color: #fff;
+    --el-menu-bg-color: #031b31;
+    --el-menu-hover-bg-color: #0c2135;
+    --el-menu-item-height: 50px;
+    --el-menu-sub-item-height: 50px;
+}
+
+
+.el-avatar {
+    display: flex;
+    margin-inline: auto;
+}
+
+.content-title {
+    margin-left: -20px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #202a34;
+}
+
+.content-title::before {
+    content: "";
+    height: 16px;
+    border-left: 3px solid #0081ff;
+    margin-right: 17px;
+}
+
+.content-main {
+    width: 100%;
+    height: 100%;
+    margin-top: 15px;
+}
+
+.operation-container {
+    margin-block: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.operation-left,
+.operation-right {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.el-pagination {
+    float: right;
+    margin-block: 10px;
+}

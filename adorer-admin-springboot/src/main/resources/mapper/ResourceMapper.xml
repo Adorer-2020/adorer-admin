@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="space.adorer.admin.mapper.ResourceMapper">
+
+    <resultMap id="BaseResultMap" type="Resource">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="url" column="url" jdbcType="VARCHAR"/>
+        <result property="method" column="method" jdbcType="VARCHAR"/>
+        <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+        <result property="isAnonymous" column="is_anonymous" jdbcType="TINYINT"/>
+        <result property="createBy" column="create_by" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select id,
+               name,
+               url,
+               method,
+               parent_id,
+               is_anonymous,
+               create_by,
+               create_time
+        from tb_resource
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete
+        from tb_resource
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="space.adorer.admin.entity.Resource"
+            useGeneratedKeys="true">
+        insert into tb_resource
+        ( id, name, url
+        , method, parent_id, is_anonymous
+        , create_by, create_time)
+        values ( #{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}
+               , #{method,jdbcType=VARCHAR}, #{parentId,jdbcType=INTEGER}, #{isAnonymous,jdbcType=TINYINT}
+               , #{createBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="space.adorer.admin.entity.Resource"
+            useGeneratedKeys="true">
+        insert into tb_resource
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="name != null">name,</if>
+            <if test="url != null">url,</if>
+            <if test="method != null">method,</if>
+            <if test="parentId != null">parent_id,</if>
+            <if test="isAnonymous != null">is_anonymous,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id,jdbcType=INTEGER},</if>
+            <if test="name != null">#{name,jdbcType=VARCHAR},</if>
+            <if test="url != null">#{url,jdbcType=VARCHAR},</if>
+            <if test="method != null">#{method,jdbcType=VARCHAR},</if>
+            <if test="parentId != null">#{parentId,jdbcType=INTEGER},</if>
+            <if test="isAnonymous != null">#{isAnonymous,jdbcType=TINYINT},</if>
+            <if test="createBy != null">#{createBy,jdbcType=BIGINT},</if>
+            <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="space.adorer.admin.entity.Resource">
+        update tb_resource
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null">
+                url = #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="method != null">
+                method = #{method,jdbcType=VARCHAR},
+            </if>
+            <if test="parentId != null">
+                parent_id = #{parentId,jdbcType=INTEGER},
+            </if>
+            <if test="isAnonymous != null">
+                is_anonymous = #{isAnonymous,jdbcType=TINYINT},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy,jdbcType=BIGINT},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="space.adorer.admin.entity.Resource">
+        update tb_resource
+        set name         = #{name,jdbcType=VARCHAR},
+            url          = #{url,jdbcType=VARCHAR},
+            method       = #{method,jdbcType=VARCHAR},
+            parent_id    = #{parentId,jdbcType=INTEGER},
+            is_anonymous = #{isAnonymous,jdbcType=TINYINT},
+            create_by    = #{createBy,jdbcType=BIGINT},
+            create_time  = #{createTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

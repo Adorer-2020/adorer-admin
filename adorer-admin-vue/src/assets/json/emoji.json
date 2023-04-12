@@ -1,0 +1,472 @@
+[
+  {
+    "desc": "[大笑]",
+    "unicode": "😄",
+    "url": "http://127.0.0.1/static/emoji/😄.png"
+  },
+  {
+    "desc": "[嘻嘻]",
+    "unicode": "😁",
+    "url": "http://127.0.0.1/static/emoji/😁.png"
+  },
+  {
+    "desc": "[嘿嘿]",
+    "unicode": "😀",
+    "url": "http://127.0.0.1/static/emoji/😀.png"
+  },
+  {
+    "desc": "[哈哈]",
+    "unicode": "😃",
+    "url": "http://127.0.0.1/static/emoji/😃.png"
+  },
+  {
+    "desc": "[斜眼笑]",
+    "unicode": "😆",
+    "url": "http://127.0.0.1/static/emoji/😆.png"
+  },
+  {
+    "desc": "[苦笑]",
+    "unicode": "😅",
+    "url": "http://127.0.0.1/static/emoji/😅.png"
+  },
+  {
+    "desc": "[笑的打滚]",
+    "unicode": "🤣",
+    "url": "http://127.0.0.1/static/emoji/🤣.png"
+  },
+  {
+    "desc": "[笑哭了]",
+    "unicode": "😂",
+    "url": "http://127.0.0.1/static/emoji/😂.png"
+  },
+  {
+    "desc": "[呵呵]",
+    "unicode": "🙂",
+    "url": "http://127.0.0.1/static/emoji/🙂.png"
+  },
+  {
+    "desc": "[倒脸]",
+    "unicode": "🙃",
+    "url": "http://127.0.0.1/static/emoji/🙃.png"
+  },
+  {
+    "desc": "[眨眼]",
+    "unicode": "😉",
+    "url": "http://127.0.0.1/static/emoji/😉.png"
+  },
+  {
+    "desc": "[羞涩微笑]",
+    "unicode": "😊",
+    "url": "http://127.0.0.1/static/emoji/😊.png"
+  },
+  {
+    "desc": "[天使]",
+    "unicode": "😇",
+    "url": "http://127.0.0.1/static/emoji/😇.png"
+  },
+  {
+    "desc": "[喜笑颜开]",
+    "unicode": "🥰",
+    "url": "http://127.0.0.1/static/emoji/🥰.png"
+  },
+  {
+    "desc": "[花痴]",
+    "unicode": "😍",
+    "url": "http://127.0.0.1/static/emoji/😍.png"
+  },
+  {
+    "desc": "[崇拜]",
+    "unicode": "🤩",
+    "url": "http://127.0.0.1/static/emoji/🤩.png"
+  },
+  {
+    "desc": "[飞吻]",
+    "unicode": "😘",
+    "url": "http://127.0.0.1/static/emoji/😘.png"
+  },
+  {
+    "desc": "[亲亲]",
+    "unicode": "😗",
+    "url": "http://127.0.0.1/static/emoji/😗.png"
+  },
+  {
+    "desc": "[微笑]",
+    "unicode": "☺",
+    "url": "http://127.0.0.1/static/emoji/☺.png"
+  },
+  {
+    "desc": "[羞涩亲亲]",
+    "unicode": "😚",
+    "url": "http://127.0.0.1/static/emoji/😚.png"
+  },
+  {
+    "desc": "[微笑亲亲]",
+    "unicode": "😙",
+    "url": "http://127.0.0.1/static/emoji/😙.png"
+  },
+  {
+    "desc": "[我没事]",
+    "unicode": "🥲",
+    "url": "http://127.0.0.1/static/emoji/🥲.png"
+  },
+  {
+    "desc": "[好吃]",
+    "unicode": "😋",
+    "url": "http://127.0.0.1/static/emoji/😋.png"
+  },
+  {
+    "desc": "[吐舌]",
+    "unicode": "😛",
+    "url": "http://127.0.0.1/static/emoji/😛.png"
+  },
+  {
+    "desc": "[调皮]",
+    "unicode": "😜",
+    "url": "http://127.0.0.1/static/emoji/😜.png"
+  },
+  {
+    "desc": "[滑稽]",
+    "unicode": "🤪",
+    "url": "http://127.0.0.1/static/emoji/🤪.png"
+  },
+  {
+    "desc": "[略略略]",
+    "unicode": "😝",
+    "url": "http://127.0.0.1/static/emoji/😝.png"
+  },
+  {
+    "desc": "[吐钱]",
+    "unicode": "🤑",
+    "url": "http://127.0.0.1/static/emoji/🤑.png"
+  },
+  {
+    "desc": "[捂嘴笑]",
+    "unicode": "🤭",
+    "url": "http://127.0.0.1/static/emoji/🤭.png"
+  },
+  {
+    "desc": "[打开双手]",
+    "unicode": "🤗",
+    "url": "http://127.0.0.1/static/emoji/🤗.png"
+  },
+  {
+    "desc": "[嘘]",
+    "unicode": "🤫",
+    "url": "http://127.0.0.1/static/emoji/🤫.png"
+  },
+  {
+    "desc": "[思考]",
+    "unicode": "🤔",
+    "url": "http://127.0.0.1/static/emoji/🤔.png"
+  },
+  {
+    "desc": "[闭嘴]",
+    "unicode": "🤐",
+    "url": "http://127.0.0.1/static/emoji/🤐.png"
+  },
+  {
+    "desc": "[挑眉]",
+    "unicode": "🤨",
+    "url": "http://127.0.0.1/static/emoji/🤨.png"
+  },
+  {
+    "desc": "[冷漠]",
+    "unicode": "😐",
+    "url": "http://127.0.0.1/static/emoji/😐.png"
+  },
+  {
+    "desc": "[无语]",
+    "unicode": "😑",
+    "url": "http://127.0.0.1/static/emoji/😑.png"
+  },
+  {
+    "desc": "[沉默]",
+    "unicode": "😶",
+    "url": "http://127.0.0.1/static/emoji/😶.png"
+  },
+  {
+    "desc": "[得意]",
+    "unicode": "😏",
+    "url": "http://127.0.0.1/static/emoji/😏.png"
+  },
+  {
+    "desc": "[不高兴]",
+    "unicode": "😒",
+    "url": "http://127.0.0.1/static/emoji/😒.png"
+  },
+  {
+    "desc": "[白眼]",
+    "unicode": "🙄",
+    "url": "http://127.0.0.1/static/emoji/🙄.png"
+  },
+  {
+    "desc": "[龇牙]",
+    "unicode": "😬",
+    "url": "http://127.0.0.1/static/emoji/😬.png"
+  },
+  {
+    "desc": "[说谎]",
+    "unicode": "🤥",
+    "url": "http://127.0.0.1/static/emoji/🤥.png"
+  },
+  {
+    "desc": "[松了口气]",
+    "unicode": "😌",
+    "url": "http://127.0.0.1/static/emoji/😌.png"
+  },
+  {
+    "desc": "[难受]",
+    "unicode": "😔",
+    "url": "http://127.0.0.1/static/emoji/😔.png"
+  },
+  {
+    "desc": "[打哈欠]",
+    "unicode": "🥱",
+    "url": "http://127.0.0.1/static/emoji/🥱.png"
+  },
+  {
+    "desc": "[困]",
+    "unicode": "😪",
+    "url": "http://127.0.0.1/static/emoji/😪.png"
+  },
+  {
+    "desc": "[流口水]",
+    "unicode": "🤤",
+    "url": "http://127.0.0.1/static/emoji/🤤.png"
+  },
+  {
+    "desc": "[睡着了]",
+    "unicode": "😴",
+    "url": "http://127.0.0.1/static/emoji/😴.png"
+  },
+  {
+    "desc": "[感冒]",
+    "unicode": "😷",
+    "url": "http://127.0.0.1/static/emoji/😷.png"
+  },
+  {
+    "desc": "[发烧]",
+    "unicode": "🤒",
+    "url": "http://127.0.0.1/static/emoji/🤒.png"
+  },
+  {
+    "desc": "[受伤]",
+    "unicode": "🤕",
+    "url": "http://127.0.0.1/static/emoji/🤕.png"
+  },
+  {
+    "desc": "[恶心]",
+    "unicode": "🤢",
+    "url": "http://127.0.0.1/static/emoji/🤢.png"
+  },
+  {
+    "desc": "[呕吐]",
+    "unicode": "🤮",
+    "url": "http://127.0.0.1/static/emoji/🤮.png"
+  },
+  {
+    "desc": "[打喷嚏]",
+    "unicode": "🤧",
+    "url": "http://127.0.0.1/static/emoji/🤧.png"
+  },
+  {
+    "desc": "[非常热]",
+    "unicode": "🥵",
+    "url": "http://127.0.0.1/static/emoji/🥵.png"
+  },
+  {
+    "desc": "[非常冷]",
+    "unicode": "🥶",
+    "url": "http://127.0.0.1/static/emoji/🥶.png"
+  },
+  {
+    "desc": "[头昏眼花]",
+    "unicode": "🥴",
+    "url": "http://127.0.0.1/static/emoji/🥴.png"
+  },
+  {
+    "desc": "[晕头转向]",
+    "unicode": "😵",
+    "url": "http://127.0.0.1/static/emoji/😵.png"
+  },
+  {
+    "desc": "[爆炸头]",
+    "unicode": "🤯",
+    "url": "http://127.0.0.1/static/emoji/🤯.png"
+  },
+  {
+    "desc": "[牛仔]",
+    "unicode": "🤠",
+    "url": "http://127.0.0.1/static/emoji/🤠.png"
+  },
+  {
+    "desc": "[聚会]",
+    "unicode": "🥳",
+    "url": "http://127.0.0.1/static/emoji/🥳.png"
+  },
+  {
+    "desc": "[伪装]",
+    "unicode": "🥸",
+    "url": "http://127.0.0.1/static/emoji/🥸.png"
+  },
+  {
+    "desc": "[帅]",
+    "unicode": "😎",
+    "url": "http://127.0.0.1/static/emoji/😎.png"
+  },
+  {
+    "desc": "[研究]",
+    "unicode": "🧐",
+    "url": "http://127.0.0.1/static/emoji/🧐.png"
+  },
+  {
+    "desc": "[书呆子]",
+    "unicode": "🤓",
+    "url": "http://127.0.0.1/static/emoji/🤓.png"
+  },
+  {
+    "desc": "[害怕]",
+    "unicode": "😨",
+    "url": "http://127.0.0.1/static/emoji/😨.png"
+  },
+  {
+    "desc": "[冷汗]",
+    "unicode": "😰",
+    "url": "http://127.0.0.1/static/emoji/😰.png"
+  },
+  {
+    "desc": "[吓死了]",
+    "unicode": "😱",
+    "url": "http://127.0.0.1/static/emoji/😱.png"
+  },
+  {
+    "desc": "[懵]",
+    "unicode": "😳",
+    "url": "http://127.0.0.1/static/emoji/😳.png"
+  },
+  {
+    "desc": "[缄默]",
+    "unicode": "😯",
+    "url": "http://127.0.0.1/static/emoji/😯.png"
+  },
+  {
+    "desc": "[吃惊]",
+    "unicode": "😮",
+    "url": "http://127.0.0.1/static/emoji/😮.png"
+  },
+  {
+    "desc": "[震惊]",
+    "unicode": "😲",
+    "url": "http://127.0.0.1/static/emoji/😲.png"
+  },
+  {
+    "desc": "[失望]",
+    "unicode": "😥",
+    "url": "http://127.0.0.1/static/emoji/😥.png"
+  },
+  {
+    "desc": "[有意见]",
+    "unicode": "😕",
+    "url": "http://127.0.0.1/static/emoji/😕.png"
+  },
+  {
+    "desc": "[微微不满]",
+    "unicode": "🙁",
+    "url": "http://127.0.0.1/static/emoji/🙁.png"
+  },
+  {
+    "desc": "[不满]",
+    "unicode": "☹",
+    "url": "http://127.0.0.1/static/emoji/☹.png"
+  },
+  {
+    "desc": "[有点失望]",
+    "unicode": "😟",
+    "url": "http://127.0.0.1/static/emoji/😟.png"
+  },
+  {
+    "desc": "[非常失望]",
+    "unicode": "😞",
+    "url": "http://127.0.0.1/static/emoji/😞.png"
+  },
+  {
+    "desc": "[生气]",
+    "unicode": "😤",
+    "url": "http://127.0.0.1/static/emoji/😤.png"
+  },
+  {
+    "desc": "[非常生气]",
+    "unicode": "😠",
+    "url": "http://127.0.0.1/static/emoji/😠.png"
+  },
+  {
+    "desc": "[怒火中烧]",
+    "unicode": "😡",
+    "url": "http://127.0.0.1/static/emoji/😡.png"
+  },
+  {
+    "desc": "[骂人]",
+    "unicode": "🤬",
+    "url": "http://127.0.0.1/static/emoji/🤬.png"
+  },
+  {
+    "desc": "[恶魔]",
+    "unicode": "😈",
+    "url": "http://127.0.0.1/static/emoji/😈.png"
+  },
+  {
+    "desc": "[恶魔生气]",
+    "unicode": "👿",
+    "url": "http://127.0.0.1/static/emoji/👿.png"
+  },
+  {
+    "desc": "[痛苦]",
+    "unicode": "😣",
+    "url": "http://127.0.0.1/static/emoji/😣.png"
+  },
+  {
+    "desc": "[很痛苦]",
+    "unicode": "😩",
+    "url": "http://127.0.0.1/static/emoji/😩.png"
+  },
+  {
+    "desc": "[非常痛苦]",
+    "unicode": "😖",
+    "url": "http://127.0.0.1/static/emoji/😖.png"
+  },
+  {
+    "desc": "[大哭]",
+    "unicode": "😭",
+    "url": "http://127.0.0.1/static/emoji/😭.png"
+  },
+  {
+    "desc": "[小丑]",
+    "unicode": "🤡",
+    "url": "http://127.0.0.1/static/emoji/🤡.png"
+  },
+  {
+    "desc": "[便便]",
+    "unicode": "💩",
+    "url": "http://127.0.0.1/static/emoji/💩.png"
+  },
+  {
+    "desc": "[幽灵]",
+    "unicode": "👻",
+    "url": "http://127.0.0.1/static/emoji/👻.png"
+  },
+  {
+    "desc": "[非礼勿视]",
+    "unicode": "🙈",
+    "url": "http://127.0.0.1/static/emoji/🙈.png"
+  },
+  {
+    "desc": "[非礼勿言]",
+    "unicode": "🙊",
+    "url": "http://127.0.0.1/static/emoji/🙊.png"
+  },
+  {
+    "desc": "[非礼勿听]",
+    "unicode": "🙉",
+    "url": "http://127.0.0.1/static/emoji/🙉.png"
+  }
+]

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="space.adorer.admin.mapper.OperationLogMapper">
+
+    <resultMap id="BaseResultMap" type="OperationLog">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="resourceId" column="resource_id" jdbcType="INTEGER"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="time" column="time" jdbcType="TIMESTAMP"/>
+        <result property="param" column="param" jdbcType="VARCHAR"/>
+        <result property="result" column="result" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select id,
+               resource_id,
+               user_id,
+               time,
+               param,
+               result
+        from tb_operation_log
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete
+        from tb_operation_log
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="space.adorer.admin.entity.OperationLog"
+            useGeneratedKeys="true">
+        insert into tb_operation_log
+        ( id, resource_id, user_id
+        , time, param, result)
+        values ( #{id,jdbcType=BIGINT}, #{resourceId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}
+               , #{time,jdbcType=TIMESTAMP}, #{param,jdbcType=VARCHAR}, #{result,jdbcType=TINYINT})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="space.adorer.admin.entity.OperationLog"
+            useGeneratedKeys="true">
+        insert into tb_operation_log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="resourceId != null">resource_id,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="time != null">time,</if>
+            <if test="param != null">param,</if>
+            <if test="result != null">result,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id,jdbcType=BIGINT},</if>
+            <if test="resourceId != null">#{resourceId,jdbcType=INTEGER},</if>
+            <if test="userId != null">#{userId,jdbcType=INTEGER},</if>
+            <if test="time != null">#{time,jdbcType=TIMESTAMP},</if>
+            <if test="param != null">#{param,jdbcType=VARCHAR},</if>
+            <if test="result != null">#{result,jdbcType=TINYINT},</if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="space.adorer.admin.entity.OperationLog">
+        update tb_operation_log
+        <set>
+            <if test="resourceId != null">
+                resource_id = #{resourceId,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="time != null">
+                time = #{time,jdbcType=TIMESTAMP},
+            </if>
+            <if test="param != null">
+                param = #{param,jdbcType=VARCHAR},
+            </if>
+            <if test="result != null">
+                result = #{result,jdbcType=TINYINT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="space.adorer.admin.entity.OperationLog">
+        update tb_operation_log
+        set resource_id = #{resourceId,jdbcType=INTEGER},
+            user_id     = #{userId,jdbcType=INTEGER},
+            time        = #{time,jdbcType=TIMESTAMP},
+            param       = #{param,jdbcType=VARCHAR},
+            result      = #{result,jdbcType=TINYINT}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>

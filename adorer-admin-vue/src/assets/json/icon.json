@@ -1,0 +1,314 @@
+[
+  {
+    "name": "图片",
+    "fontClass": "picture"
+  },
+  {
+    "name": "emoji",
+    "fontClass": "emoji"
+  },
+  {
+    "name": "上传",
+    "fontClass": "upload"
+  },
+  {
+    "name": "发布",
+    "fontClass": "publish-right"
+  },
+  {
+    "name": "更多",
+    "fontClass": "more-point"
+  },
+  {
+    "name": "分类",
+    "fontClass": "category"
+  },
+  {
+    "name": "欢迎页",
+    "fontClass": "welcome"
+  },
+  {
+    "name": "数据分析-宝贝分析",
+    "fontClass": "analyse"
+  },
+  {
+    "name": "工作台",
+    "fontClass": "workspace"
+  },
+  {
+    "name": "换背景",
+    "fontClass": "background"
+  },
+  {
+    "name": "文章管理",
+    "fontClass": "todo"
+  },
+  {
+    "name": "首页管理",
+    "fontClass": "house"
+  },
+  {
+    "name": "24gf-tags4",
+    "fontClass": "tag-left"
+  },
+  {
+    "name": "关于我们",
+    "fontClass": "about"
+  },
+  {
+    "name": "网站管理",
+    "fontClass": "website"
+  },
+  {
+    "name": "链接",
+    "fontClass": "link"
+  },
+  {
+    "name": "发表",
+    "fontClass": "edit-pen"
+  },
+  {
+    "name": "系统",
+    "fontClass": "system"
+  },
+  {
+    "name": "角色",
+    "fontClass": "role"
+  },
+  {
+    "name": "上箭头",
+    "fontClass": "up"
+  },
+  {
+    "name": "编辑",
+    "fontClass": "edit"
+  },
+  {
+    "name": "标记",
+    "fontClass": "flag"
+  },
+  {
+    "name": "撤销",
+    "fontClass": "redo"
+  },
+  {
+    "name": "代码",
+    "fontClass": "code"
+  },
+  {
+    "name": "发布",
+    "fontClass": "publish"
+  },
+  {
+    "name": "复制",
+    "fontClass": "copy"
+  },
+  {
+    "name": "关联",
+    "fontClass": "connect"
+  },
+  {
+    "name": "删除",
+    "fontClass": "delete"
+  },
+  {
+    "name": "刷新",
+    "fontClass": "refresh"
+  },
+  {
+    "name": "添加",
+    "fontClass": "add"
+  },
+  {
+    "name": "图表",
+    "fontClass": "chart"
+  },
+  {
+    "name": "可拖拽",
+    "fontClass": "more"
+  },
+  {
+    "name": "查看",
+    "fontClass": "look"
+  },
+  {
+    "name": "全屏",
+    "fontClass": "full-screen"
+  },
+  {
+    "name": "收起",
+    "fontClass": "collapse"
+  },
+  {
+    "name": "展开",
+    "fontClass": "expand"
+  },
+  {
+    "name": "最小化",
+    "fontClass": "cancel-full-screen"
+  },
+  {
+    "name": "警示",
+    "fontClass": "warning"
+  },
+  {
+    "name": "收藏",
+    "fontClass": "favorite"
+  },
+  {
+    "name": "搜索",
+    "fontClass": "search"
+  },
+  {
+    "name": "个人",
+    "fontClass": "personal"
+  },
+  {
+    "name": "皇冠",
+    "fontClass": "crown"
+  },
+  {
+    "name": "消息",
+    "fontClass": "letter"
+  },
+  {
+    "name": "表单",
+    "fontClass": "table"
+  },
+  {
+    "name": "表单完成",
+    "fontClass": "table-finish"
+  },
+  {
+    "name": "多人",
+    "fontClass": "user-list"
+  },
+  {
+    "name": "多人2",
+    "fontClass": "user-list-black"
+  },
+  {
+    "name": "个人2",
+    "fontClass": "personal-black"
+  },
+  {
+    "name": "类目",
+    "fontClass": "menu"
+  },
+  {
+    "name": "企业",
+    "fontClass": "department"
+  },
+  {
+    "name": "书",
+    "fontClass": "book"
+  },
+  {
+    "name": "属性",
+    "fontClass": "attribute"
+  },
+  {
+    "name": "分享",
+    "fontClass": "share"
+  },
+  {
+    "name": "立方体",
+    "fontClass": "cube"
+  },
+  {
+    "name": "标签",
+    "fontClass": "tag"
+  },
+  {
+    "name": "对调",
+    "fontClass": "exchange"
+  },
+  {
+    "name": "人民币",
+    "fontClass": "money"
+  },
+  {
+    "name": "日历",
+    "fontClass": "calendar"
+  },
+  {
+    "name": "时间",
+    "fontClass": "time"
+  },
+  {
+    "name": "柱形图",
+    "fontClass": "chart-column"
+  },
+  {
+    "name": "走势图",
+    "fontClass": "chart-line"
+  },
+  {
+    "name": "查找 表单 列表",
+    "fontClass": "form-search"
+  },
+  {
+    "name": "地球 全球",
+    "fontClass": "internet"
+  },
+  {
+    "name": "分组 表格",
+    "fontClass": "group"
+  },
+  {
+    "name": "全屏 最大化",
+    "fontClass": "maximize"
+  },
+  {
+    "name": "退出全屏",
+    "fontClass": "minimize"
+  },
+  {
+    "name": "下拉框 表单",
+    "fontClass": "select"
+  },
+  {
+    "name": "新建页面 添加",
+    "fontClass": "page-add"
+  },
+  {
+    "name": "数据源",
+    "fontClass": "database"
+  },
+  {
+    "name": "竞争情报",
+    "fontClass": "form-chart"
+  },
+  {
+    "name": "数据作战室",
+    "fontClass": "trend-computer"
+  },
+  {
+    "name": "销量预测",
+    "fontClass": "trend"
+  },
+  {
+    "name": "消息",
+    "fontClass": "message"
+  },
+  {
+    "name": "首页",
+    "fontClass": "home"
+  },
+  {
+    "name": "设置",
+    "fontClass": "setting"
+  },
+  {
+    "name": "左箭头",
+    "fontClass": "left"
+  },
+  {
+    "name": "右箭头",
+    "fontClass": "right"
+  },
+  {
+    "name": "下箭头",
+    "fontClass": "down"
+  }
+]
