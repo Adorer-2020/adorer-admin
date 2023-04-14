@@ -8,6 +8,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import space.adorer.admin.entity.User;
+import space.adorer.admin.exception.BadRequestException;
 import space.adorer.admin.pojo.R;
 import space.adorer.admin.service.AuthService;
 import space.adorer.admin.utils.UserInfoUtils;
@@ -35,13 +36,17 @@ public class AuthController {
      */
     @GetMapping("captcha.jpg")
     public void getCaptcha(@RequestParam("uuid") String uuid, HttpServletResponse response) {
+        // uuid 不能为空，为空则抛出异常
         if (!StringUtils.hasText(uuid)) {
-            throw new RuntimeException("uuid 不能为空");
+            throw new BadRequestException("uuid 不能为空");
         }
+        // 设置相应头
         response.setHeader("Cache-Control", "no-store, no-cache");
         response.setContentType("image/jpeg");
         try {
+            // 根据 uuid 生成图片验证码
             BufferedImage image = authService.createCaptcha(uuid);
+            // 获取相应输出流，将图片写入
             ServletOutputStream out = response.getOutputStream();
             ImageIO.write(image, "jpg", out);
             // 关闭 io 流
@@ -54,8 +59,9 @@ public class AuthController {
     /**
      * 获取短信/邮箱验证码
      */
-    @GetMapping("code")
-    public R getCode() {
+    @GetMapping("code/{type}")
+    public R getCode(@RequestParam("account") String account, @PathVariable String type) {
+        authService.sendCode(account, type);
         return R.ok();
     }
 

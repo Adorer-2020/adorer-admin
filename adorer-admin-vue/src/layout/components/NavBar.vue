@@ -1,7 +1,6 @@
 <script setup>
-import {computed, onMounted} from 'vue'
-import {useStore, useUserStore} from '@/store'
-import {useRoute} from 'vue-router'
+import {computed, onMounted} from 'vue';
+import {ElNotification} from 'element-plus';
 import {
     ArrowLeftBold,
     ArrowRightBold,
@@ -11,9 +10,10 @@ import {
     Tools,
     Unlock,
     UserFilled
-} from '@element-plus/icons-vue'
-import axios from '@/utils/request'
-import {ElNotification} from 'element-plus'
+} from '@element-plus/icons-vue';
+import {useStore, useUserStore} from '@/stores';
+import {useRoute} from 'vue-router';
+import axios from '@/utils/request';
 
 const route = useRoute();
 const store = useStore();
@@ -22,7 +22,7 @@ const userStore = useUserStore();
 onMounted(() => {
     // 获取基本用户信息
     axios.get('/api/user/info').then(({data}) => {
-        if (data && data.code == 200) {
+        if (data && data.code === 200) {
             userStore.setUserInfo(data.info)
         } else {
             ElNotification.error({title: '失败', message: '获取用户基本信息失败！'})
@@ -30,12 +30,14 @@ onMounted(() => {
     })
 })
 
+// 面包屑
 const breadcrumbList = computed(() => {
-    return route.matched.map(item => item.meta.title).filter(item => item != '后台管理系统');
+    return route.matched.map(item => item.meta.title).filter(item => item !== '后台管理系统');
 })
 </script>
 
 <template>
+    <!-- 顶部信息栏 -->
     <div class="header-container">
         <!-- 左侧菜单 -->
         <div class="header-left">
@@ -89,7 +91,7 @@ const breadcrumbList = computed(() => {
     <div class="tabs-container">
         <div class="tabs-wrapper">
             <el-scrollbar>
-                <el-tag v-for="tab in store.tabs" :key="tab.path" :closable="tab.path != '/workspace/welcome'"
+                <el-tag v-for="tab in store.tabs" :key="tab.path" :closable="tab.path !== '/workspace/welcome'"
                         :effect="store.activeTab.path === tab.path ? 'dark' : 'light'"
                         class='tabs-view-item'
                         @click="$router.push({ path: tab.path })"

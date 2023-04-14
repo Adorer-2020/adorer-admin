@@ -35,9 +35,14 @@ public class Menu implements Serializable {
     private String icon;
 
     /**
-     * 访问 url
+     * 访问路径
      */
-    private String url;
+    private String path;
+
+    /**
+     * 组件路径
+     */
+    private String component;
 
     /**
      * 父菜单 id

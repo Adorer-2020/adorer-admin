@@ -3,11 +3,11 @@ import icons from '@/assets/json/icon.json'
 import {onMounted, ref, watch} from 'vue';
 import {ElMessage, ElNotification} from 'element-plus'
 import {Delete, Edit, Plus, Search} from '@element-plus/icons-vue'
-import {useStore} from '@/store'
+import {useStore} from 'adorer-admin-vue/src/stores'
 import axios from '@/utils/request';
 import dayjs from 'dayjs';
 
-const store = useStore()
+const store = useStore();
 const queryString = ref('');
 const dialog = ref({visible: false, title: ''});
 const formData = ref({});
@@ -31,7 +31,7 @@ onMounted(() => {
  * 监听 queryString, 当 queryString 为空时自动重新查数据
  */
 watch(queryString, (newValue) => {
-    if (newValue == '') {
+    if (newValue === '') {
         query()
     }
 })
@@ -45,7 +45,7 @@ function query() {
         params: {queryString: queryString.value},
         method: 'GET'
     }).then(({data}) => {
-        if (data && data.code == 200) {
+        if (data && data.code === 200) {
             tableData.value = data.menuList;
         }
     })
@@ -56,7 +56,7 @@ function query() {
  */
 function getMenuList() {
     axios.get('/api/menu/list').then(({data}) => {
-        if (data && data.code == 200) {
+        if (data && data.code === 200) {
             menuList.value = data.menuList;
         }
     })
@@ -85,13 +85,13 @@ function handlerEdit(row) {
  * 点击确认按钮
  */
 function handlerOK() {
-    const method = dialog.value.title == '新增菜单' ? 'POST' : 'PUT'
+    const method = dialog.value.title === '新增菜单' ? 'POST' : 'PUT'
     axios({
         url: '/api/menu',
         data: formData.value,
         method
     }).then(({data}) => {
-        if (data && data.code == 200) {
+        if (data && data.code === 200) {
             ElMessage.success(data.msg)
         }
     }).finally(() => {
@@ -134,7 +134,7 @@ function handlerDelete() {
         <el-table-column align="center" label="组件路径" min-width="120" property="component"/>
         <el-table-column align="center" label="状态" property="status" width="70">
             <template #default="scope">
-                <el-tag v-if="scope.row.status == 0" type="success">启用</el-tag>
+                <el-tag v-if="scope.row.status === 0" type="success">启用</el-tag>
                 <el-tag v-else type="danger">禁用</el-tag>
             </template>
         </el-table-column>

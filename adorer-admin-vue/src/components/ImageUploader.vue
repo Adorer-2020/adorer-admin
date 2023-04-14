@@ -2,19 +2,16 @@
 import {computed} from 'vue'
 import {ElMessage} from 'element-plus';
 
+// 组件属性
 const props = defineProps({
-    modelValue: String,
-    width: {type: Number, default: 320},
-    height: {type: Number, default: 180},
-    type: {type: String, default: 'image'}
+    modelValue: String,                         // 图片地址，双向绑定
+    width: {type: Number, default: 320},        // 组件宽度
+    height: {type: Number, default: 180},       // 组件高度
+    type: {type: String, default: 'image'}      // 文件类型，决定了后端文件存储路径
 })
-
+// 组件事件
 const emit = defineEmits(['update:modelValue'])
-
-const headers = {
-    token: localStorage.getItem('token')
-}
-
+// 图片 url
 const imgUrl = computed({
     get() {
         return props.modelValue;
@@ -23,18 +20,29 @@ const imgUrl = computed({
         emit('update:modelValue', value)
     }
 })
+// 文件上传请求的请求头
+const headers = {
+    token: localStorage.getItem('token')
+}
 
+/**
+ * 校验文件格式是否为图片
+ */
 function validate(file) {
-    if (file.type != 'image/jpeg' && file.type != 'image/png') {
-        ElMessage.error('仅支持 JPEG/PNG 类型的图片')
+    if (!isImage(file)) {
+        ElMessage.error('图片格式有误！')
         return false;
     }
     return true;
 }
 
+/**
+ * 上传结束后的处理
+ * @param data 响应
+ */
 function update(data) {
     console.log(data);
-    if (data && data.code == 200) {
+    if (data && data.code === 200) {
         ElMessage.success('上传成功');
         imgUrl.value = data.url;
     } else {

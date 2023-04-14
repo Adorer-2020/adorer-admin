@@ -1,6 +1,6 @@
 <script setup>
-import '../assets/js/iconfont.js'
-
+import '@/assets/js/iconfont'
+// 组件属性
 defineProps({name: {type: String, requrie: true}})
 </script>
 

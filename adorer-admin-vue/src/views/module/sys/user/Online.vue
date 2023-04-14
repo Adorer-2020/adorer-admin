@@ -25,7 +25,7 @@ function pageQuery() {
         },
         method: 'GET'
     }).then(({data}) => {
-        if (data && data.code == 200) {
+        if (data && data.code === 200) {
             tableData.value = data.userList;
             page.value.total = data.total;
         }
@@ -37,20 +37,20 @@ function selectionChange(selection) {
 }
 
 function handleDelete(userId) {
-    let param = ''
+    let param;
     if (userId) {
-        param = `${userId}`
+        param = `${userId}`;
     } else {
-        param = `/batch?userId=${selectionIds.value[0]}`
+        param = `/batch?userId=${selectionIds.value[0]}`;
         for (let i = 1; i < selectionIds.value.length; i++) {
-            param += `&userId=${selectionIds.value[i]}`
+            param += `&userId=${selectionIds.value[i]}`;
         }
     }
     axios({
         url: `/api/user/online/${param}`,
         method: 'DELETE'
     }).then(({data}) => {
-        if (data && data.code == 200) {
+        if (data && data.code === 200) {
             ElMessage.success('下线成功')
         }
     }).finally(() => {
@@ -78,13 +78,13 @@ function pageChange(currentPage) {
   <!-- 标题/按钮栏 -->
     <div class="operation-container">
         <div class="operation-left">
-            <el-button :disabled="selectionIds.length == 0" :icon="Tickets" type="primary"
+            <el-button :disabled="selectionIds.length === 0" :icon="Tickets" type="primary"
                        @click="handleDelete()">全部下线
             </el-button>
         </div>
         <div class="operation-right">
             <el-input v-model="queryString" :prefix-icon="Search" placeholder="用户名 / 昵称"/>
-            <el-button :icon="Search" style="margin-left: 10px;" type="primary" @click="pageQuery">搜索</el-button>
+            <el-button :icon="Search" style="margin-left: 10px;" type="primary" @click="pageQuery()">搜索</el-button>
         </div>
     </div>
   <!-- 内容区 -->
@@ -121,7 +121,7 @@ function pageChange(currentPage) {
     <el-pagination :current-page="page.currentPage" :page-size="page.pageSize" :page-sizes="[10, 25, 50, 100]"
                    :pager-count="7" :total="page.total" background
                    layout="total, sizes, prev, pager, next, jumper"
-                   @size-change="sizeChange" @current-change="pageChange"/>
+                   @size-change="sizeChange()" @current-change="pageChange()"/>
 </template>
 
 <style scoped></style>

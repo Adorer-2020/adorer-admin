@@ -1,5 +1,5 @@
 <script setup>
-import {useUserStore} from '@/store';
+import {useUserStore} from 'adorer-admin-vue/src/stores';
 import {onMounted, ref} from 'vue'
 import tips from '@/assets/json/message.json'
 import axios from '@/utils/request'

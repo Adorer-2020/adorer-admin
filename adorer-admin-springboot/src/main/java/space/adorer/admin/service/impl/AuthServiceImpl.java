@@ -7,11 +7,14 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import space.adorer.admin.entity.User;
+import space.adorer.admin.enums.LoginType;
+import space.adorer.admin.exception.BadRequestException;
 import space.adorer.admin.pojo.RequestUser;
 import space.adorer.admin.service.AuthService;
 import space.adorer.admin.service.UserService;
 import space.adorer.admin.utils.JwtUtils;
 import space.adorer.admin.utils.RedisUtils;
+import space.adorer.admin.utils.ValidateUtils;
 
 import java.awt.image.BufferedImage;
 import java.util.Date;
@@ -51,6 +54,30 @@ public class AuthServiceImpl implements AuthService {
         RedisUtils.setObject("code:uuid:" + uuid, code, 5, TimeUnit.MINUTES);
         // 生成图片验证码并返回
         return producer.createImage(code);
+    }
+
+    /**
+     * 给指定邮箱/手机号发送图片验证码
+     *
+     * @param account 手机号或邮箱
+     * @param type
+     */
+    @Override
+    public void sendCode(String account, String type) {
+        // 生成验证码
+        String text = producer.createText();
+        // 邮箱登录
+        if (type.equalsIgnoreCase(LoginType.EMAIL.name()) && ValidateUtils.isEmail(account)) {
+            // TODO: 发送邮箱验证码
+            System.out.println(text);
+        } else if (type.equalsIgnoreCase(LoginType.MOBILE.name()) && ValidateUtils.isMobile(account)) {
+            // TODO: 发送手机验证码
+            System.out.println(text);
+        } else {
+            throw new BadRequestException(type + "格式有误");
+        }
+        // 往 redis 里存一个五分钟过期的验证码
+        RedisUtils.setObject("code:" + type + ":" + account, text, 5, TimeUnit.MINUTES);
     }
 
     /**

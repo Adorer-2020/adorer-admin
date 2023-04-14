@@ -2,11 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="space.adorer.admin.mapper.MenuMapper">
 
-    <resultMap id="BaseResultMap" type="Menu">
+    <resultMap id="MenuMap" type="Menu">
         <id property="id" column="id" jdbcType="INTEGER"/>
         <result property="name" column="name" jdbcType="VARCHAR"/>
         <result property="icon" column="icon" jdbcType="VARCHAR"/>
-        <result property="url" column="url" jdbcType="VARCHAR"/>
+        <result property="path" column="path" jdbcType="VARCHAR"/>
+        <result property="component" column="component" jdbcType="VARCHAR"/>
         <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
         <result property="sort" column="sort" jdbcType="TINYINT"/>
         <result property="status" column="status" jdbcType="TINYINT"/>
@@ -14,34 +15,15 @@
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
-    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-        select id,
-               name,
-               icon,
-               url,
-               parent_id,
-               sort,
-               status,
-               create_by,
-               create_time
-        from tb_menu
-        where id = #{id,jdbcType=INTEGER}
-    </select>
-
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-        delete
-        from tb_menu
-        where id = #{id,jdbcType=INTEGER}
-    </delete>
+    <!-- 新增菜单 -->
     <insert id="insert" keyColumn="id" keyProperty="id" parameterType="Menu" useGeneratedKeys="true">
-        insert into tb_menu
-        ( id, name, icon
-        , url, parent_id, sort
-        , status, create_by, create_time)
-        values ( #{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}
-               , #{url,jdbcType=VARCHAR}, #{parentId,jdbcType=INTEGER}, #{sort,jdbcType=TINYINT}
-               , #{status,jdbcType=TINYINT}, #{createBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP})
+        insert into tb_menu (name, icon, path, component, parent_id, sort, status, create_by, create_time)
+        values (#{name,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR},
+                #{component,jdbcType=VARCHAR}, #{parentId,jdbcType=INTEGER}, #{sort,jdbcType=TINYINT},
+                #{status,jdbcType=TINYINT}, #{createBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP})
     </insert>
+
+    <!-- 新增菜单(部分字段) -->
     <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="Menu"
             useGeneratedKeys="true">
         insert into tb_menu
@@ -49,7 +31,8 @@
             <if test="id != null">id,</if>
             <if test="name != null">name,</if>
             <if test="icon != null">icon,</if>
-            <if test="url != null">url,</if>
+            <if test="path != null">path,</if>
+            <if test="component != null">component,</if>
             <if test="parentId != null">parent_id,</if>
             <if test="sort != null">sort,</if>
             <if test="status != null">status,</if>
@@ -60,7 +43,8 @@
             <if test="id != null">#{id,jdbcType=INTEGER},</if>
             <if test="name != null">#{name,jdbcType=VARCHAR},</if>
             <if test="icon != null">#{icon,jdbcType=VARCHAR},</if>
-            <if test="url != null">#{url,jdbcType=VARCHAR},</if>
+            <if test="path != null">#{path,jdbcType=VARCHAR},</if>
+            <if test="component != null">#{component,jdbcType=VARCHAR},</if>
             <if test="parentId != null">#{parentId,jdbcType=INTEGER},</if>
             <if test="sort != null">#{sort,jdbcType=TINYINT},</if>
             <if test="status != null">#{status,jdbcType=TINYINT},</if>
@@ -68,17 +52,55 @@
             <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="Menu">
+
+    <!-- 根据菜单 id 获取菜单数据 -->
+    <select id="selectById" parameterType="java.lang.Long" resultMap="MenuMap">
+        select id,
+               name,
+               icon,
+               path,
+               component,
+               parent_id,
+               sort,
+               status,
+               create_by,
+               create_time
+        from tb_menu
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <!-- 获取用户菜单列表 -->
+    <select id="listByUserId" resultType="Menu">
+        SELECT m.id,
+               m.name,
+               m.icon,
+               m.path,
+               m.component,
+               m.parent_id,
+               m.sort,
+               m.status,
+               m.create_time
+        FROM tb_menu m
+                 LEFT JOIN tb_role_menu rm ON m.id = rm.menu_id
+                 LEFT JOIN tb_user_role ur ON rm.role_id = ur.user_id
+        WHERE user_id = #{userId}
+    </select>
+
+    <!-- 根据 id 更新菜单数据 -->
+    <update id="updateById" parameterType="Menu">
         update tb_menu
         <set>
-            <if test="name != null">
+            <if test="name != null and name != ''">
                 name = #{name,jdbcType=VARCHAR},
             </if>
-            <if test="icon != null">
+            <if test="icon != null and icon != ''">
                 icon = #{icon,jdbcType=VARCHAR},
             </if>
-            <if test="url != null">
-                url = #{url,jdbcType=VARCHAR},
+            <if test="path != null  and icon != ''">
+                path = #{path,jdbcType=VARCHAR},
+            </if>
+            <if test="component != null  and component != ''">
+                component = #{component,jdbcType=VARCHAR},
             </if>
             <if test="parentId != null">
                 parent_id = #{parentId,jdbcType=INTEGER},
@@ -98,16 +120,12 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="Menu">
-        update tb_menu
-        set name        = #{name,jdbcType=VARCHAR},
-            icon        = #{icon,jdbcType=VARCHAR},
-            url         = #{url,jdbcType=VARCHAR},
-            parent_id   = #{parentId,jdbcType=INTEGER},
-            sort        = #{sort,jdbcType=TINYINT},
-            status      = #{status,jdbcType=TINYINT},
-            create_by   = #{createBy,jdbcType=BIGINT},
-            create_time = #{createTime,jdbcType=TIMESTAMP}
+
+    <!-- 根据 id 删除菜单数据 -->
+    <delete id="deleteById" parameterType="java.lang.Long">
+        delete
+        from tb_menu
         where id = #{id,jdbcType=INTEGER}
-    </update>
+    </delete>
+
 </mapper>

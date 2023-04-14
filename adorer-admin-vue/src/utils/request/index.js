@@ -24,8 +24,8 @@ http.interceptors.request.use(config => {
  */
 http.interceptors.response.use(response => {
     if (response.data && response.data.code === 401) { // 401, token失效
-        localStorage.removeItem('token')
-        router.push({name: 'login'})
+        localStorage.removeItem('token');
+        router.push({name: 'login'});
     }
     return response
 }, error => {

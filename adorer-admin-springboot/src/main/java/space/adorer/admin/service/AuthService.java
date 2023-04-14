@@ -20,6 +20,14 @@ public interface AuthService {
     BufferedImage createCaptcha(String uuid);
 
     /**
+     * 给指定邮箱/手机号发送图片验证码
+     *
+     * @param account 手机号或邮箱
+     * @param type
+     */
+    void sendCode(String account, String type);
+
+    /**
      * 校验验证码是否正确
      *
      * @param key  和验证码绑定的标识符

@@ -10,12 +10,10 @@ defineProps({menu: Object})
         </template>
         <menu-item v-for="item in menu.children" :key="item.id" :menu="item"/>
     </el-sub-menu>
-    <template v-else>
-        <el-menu-item v-if="menu.type == 0" :index="menu.path">
-            <i :class="`iconfont icon-${menu.icon}`" class="menu-icon"/>
-            <span slot="title" style="line-height:50px">{{ menu.name }}</span>
-        </el-menu-item>
-    </template>
+    <el-menu-item v-else :index="menu.path">
+        <i :class="`iconfont icon-${menu.icon}`" class="menu-icon"/>
+        <span slot="title" style="line-height:50px">{{ menu.name }}</span>
+    </el-menu-item>
 </template>
 
 <style>

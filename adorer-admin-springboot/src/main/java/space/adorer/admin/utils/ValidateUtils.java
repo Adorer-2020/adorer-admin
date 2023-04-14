@@ -14,7 +14,7 @@ public class ValidateUtils {
      * @param email 邮箱字符串
      * @return 是否为有效邮箱
      */
-    public static boolean isValidEmail(String email) {
+    public static boolean isEmail(String email) {
         String regex = "\\w+@\\w+\\.[a-z]+(\\.[a-z]+)?";
         return email.matches(regex);
     }
@@ -25,7 +25,7 @@ public class ValidateUtils {
      * @param mobile 手机号字符串
      * @return 是否为有效手机号
      */
-    public static boolean isValidPhone(String mobile) {
+    public static boolean isMobile(String mobile) {
         String regex = "1[3-9]\\d{9}";
         return mobile.matches(regex);
     }

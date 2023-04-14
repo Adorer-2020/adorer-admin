@@ -3,7 +3,7 @@ import SideBar from './components/SideBar.vue';
 import NavBar from './components/NavBar.vue';
 import Content from './components/Content.vue';
 
-import {useStore} from '@/store'
+import {useStore} from '@/stores'
 
 const store = useStore();
 </script>

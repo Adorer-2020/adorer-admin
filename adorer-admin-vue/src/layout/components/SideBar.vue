@@ -1,20 +1,22 @@
 <script setup>
+import {useNavStore, useStore} from 'adorer-admin-vue/src/stores';
 import MenuItem from '@/components/MenuItem.vue';
-import {useStore} from '@/store';
 
 const store = useStore();
+const navStore = useNavStore();
 </script>
 
 <template>
+  <!-- logo -->
     <div class="logo-container" @click="$router.push({ path: '/' })">
         <img alt="logo" src="@/assets/imgs/logo.png">
         <div class="logo-title">后台管理系统</div>
     </div>
+  <!-- 菜单 -->
     <el-scrollbar>
         <el-menu :collapse="store.collapse" :default-active="$route.path" class='menu-container' collapse-transition
-                 router
-                 unique-openeds>
-            <menu-item v-for="menu in store.menuList" :key="menu.id" :menu="menu"/>
+                 router unique-openeds>
+            <MenuItem v-for="menu in navStore.menus" :key="menu.id" :menu="menu"/>
         </el-menu>
     </el-scrollbar>
 </template>

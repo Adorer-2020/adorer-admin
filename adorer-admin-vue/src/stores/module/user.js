@@ -3,9 +3,13 @@ import {defineStore} from "pinia";
 export const useUserStore = defineStore('userStore', {
     state: () => ({
         userInfo: {
+            // 昵称
             nickname: 'user',
+            // 头像
             avatar: 'http://47.115.230.49/static/imgs/avatar/default.jpg',
+            // 手机号
             mobile: '',
+            // 邮箱
             email: ''
         }
     }),
@@ -24,7 +28,7 @@ export const useUserStore = defineStore('userStore', {
         }
     },
     actions: {
-        setUserInfo(user) {
+        setUserInfo(user = {}) {
             for (let key in user) {
                 this.userInfo[key] = user[key];
             }
